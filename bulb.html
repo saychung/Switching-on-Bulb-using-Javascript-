@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bulb</title>
+</head>
+<body>
+	<h1>Click the switch to turn the bulb on or off</h1>
+	<img id="bulb" src="off.png" height="500" width="300">	
+	<img id="switch" src="switchdown.png" onclick="turnonoff()" height="100" width="100">
+	<script> 
+		var current_rotation=0;
+		function turnonoff()
+		{
+		current_rotation += 180;
+		document.querySelector("#switch").style.transform='rotate(' + current_rotation + 'deg)';
+		var image=document.getElementById('bulb');
+		if(image.src.match("on.png"))
+			image.src="off.png";
+		else
+			image.src="on.png";
+		}
+	</script>	
+
+</body>
+</html>
